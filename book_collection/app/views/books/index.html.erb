@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  <div class="content">
+    <p style="color: green"><%= notice %></p>
+
+    <h1>Home</h1>
+    <div class="create-books">
+      <%= link_to "Create Book", new_book_path %>
+    </div>
+    <div id="books" class="book-style">
+      <% @books.each do |book| %>
+        <%= render book %>
+          <p>
+            <%= link_to "Update Book", edit_book_path(book) %>
+          </p>
+          <p>
+            <%= link_to "Show Details", book %>
+          </p>
+          <p>
+            <%= link_to "Delete Book", delete_book_path(book) %>
+          </p>
+        <% end %>
+    </div>
+  </div>
+</body>
+</html>

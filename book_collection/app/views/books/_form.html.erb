@@ -1,0 +1,22 @@
+<%= form_with(model: book) do |form| %>
+  <% if book.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div style="padding: 5px; display: flex; flex-direction: row; align-items: center;">
+    <%= form.label :title, style: "padding-right:5px;" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div style="padding: 5px; display:flex;justify-content: center;">
+    <%= form.submit %>
+  </div>
+<% end %>
