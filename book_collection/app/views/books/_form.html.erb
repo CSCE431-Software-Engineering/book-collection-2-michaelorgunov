@@ -15,6 +15,18 @@
     <%= form.label :title, style: "padding-right:5px;" %>
     <%= form.text_field :title %>
   </div>
+  <div style="padding: 5px; display: flex; flex-direction: row; align-items: center;">
+    <%= form.label :author, style: "padding-right:5px;" %>
+    <td><%= form.text_field(:author) %></td>
+  </div>
+  <div style="padding: 5px; display: flex; flex-direction: row; align-items: center;">
+    <%= form.label :price, style: "padding-right:5px;" %>
+    <td><%= form.number_field(:price) %></td>
+  </div>
+  <div style="padding: 5px; display: flex; flex-direction: row; align-items: center;">
+    <%= form.label :date, style: "padding-right:5px;" %>
+    <td><%= form.date_field(:date) %></td>
+  </div>
 
   <div style="padding: 5px; display:flex;justify-content: center;">
     <%= form.submit %>
